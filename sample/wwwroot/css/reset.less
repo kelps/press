@@ -1,0 +1,266 @@
+﻿@highlight: yellow;
+
+.ir() {
+    text-indent: 100%;
+    text-wrap: none;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+article, aside, details, dialog, figcaption, figure, footer, header, hgroup, main, meter, nav, section, summary {
+    display: block;
+}
+
+audio, canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+a, a:active {
+    outline: 0;
+    color: inherit;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:focus {
+    outline: 1px dashed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+blockquote {
+    margin: 0 1em;
+}
+
+dfn {
+    font-style: italic;
+}
+
+mark {
+    background: @highlight;
+    color: inherit;
+}
+
+p, pre {
+    margin: 0 0 .5em 0;
+}
+
+code, kbd, pre, samp {
+    font-family: monospace,serif;
+    _font-family: 'courier new',monospace;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+q {
+    quotes: none;
+}
+
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+small {
+    font-size: 75%;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+dl, menu, ol, ul {
+    margin: 0;
+}
+
+dd {
+    margin: 0 0 0 1em;
+}
+
+menu, ol, ul {
+    padding: 0 0 0 1em;
+}
+
+nav {
+    ul, ol {
+        list-style: none;
+        list-style-image: none;
+    }
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    -ms-interpolation-mode: bicubic;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 0;
+}
+
+form {
+    margin: 0;
+}
+
+fieldset {
+    border: 1px solid;
+    margin: 0;
+    padding: .5em;
+}
+
+legend {
+    font-size: 1.2em;
+    border: 0;
+    padding: 0 .2em;
+    white-space: normal;
+    *margin-left: -7px;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+
+button, input {
+    line-height: normal;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    *overflow: visible;
+}
+
+button[disabled], input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+    margin-left: 2px;
+    margin-right: 2px;
+    *height: 13px;
+    *width: 13px;
+    vertical-align: sub;
+    *vertical-align: middle;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th {
+    font-weight: 600;
+}
