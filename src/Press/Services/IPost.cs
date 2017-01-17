@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Postal.Services
+namespace Press.Services
 {
     public interface IPost
     {
