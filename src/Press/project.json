@@ -4,6 +4,7 @@
     "dependencies": {
         "Microsoft.AspNetCore.Http.Abstractions": "1.0.0",
         "Microsoft.AspNetCore.Mvc.Core": "1.0.1",
+        "Microsoft.AspNetCore.Mvc.Razor": "1.0.1",
         "Microsoft.AspNetCore.Routing": "1.0.1",
         "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
         "Microsoft.Extensions.FileProviders.Composite": "1.0.0",
