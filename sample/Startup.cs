@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Press.Extensions;
 
 namespace sample {
     public class Startup {
@@ -25,6 +26,7 @@ namespace sample {
         public void ConfigureServices(IServiceCollection services) {
             // Add framework services.
             services.AddMvc();
+            services.AddBlog();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,32 +43,15 @@ namespace sample {
 
             app.UseStaticFiles();
 
+            app.UseBlog();
+
             app.UseMvc(routes => {
                 routes.MapRoute(
-                        name: "blogPost",
-                        template: "post/{*slug}",
-                        defaults: new {
-                            controller = "Blog",
-                            action = "Article"
-                        })
-                    .MapRoute(
-                        name: "blogCategory",
-                        template: "category/{*category}",
-                        defaults: new {
-                            controller = "Blog",
-                            action = "ViewCategory"
-                        })
-                    .MapRoute(
-                        name: "blogTag",
-                        template: "tag/{*tag}",
-                        defaults: new {
-                            controller = "Blog",
-                            action = "ViewTag"
-                        })
-                    .MapRoute(
                         name: "default",
                         template: "{controller=Blog}/{action=Index}/{id?}");
             });
+
+
         }
     }
 }
