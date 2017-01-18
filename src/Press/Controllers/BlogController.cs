@@ -6,12 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Press.Controllers {
     public class BlogController : Controller {
-        public IActionResult Index() {
-            return View();
+        Services.IBlogRepository blog;
+        public BlogController(Services.IBlogRepository blog) {
+            this.blog = blog;
         }
 
-        public IActionResult Article(string slug) {
-            return View();
+        public IActionResult Index() {
+            return View(blog.List());
+        }
+
+        public IActionResult ViewPost(string slug) {
+            return View("Post");
         }
     }
 }

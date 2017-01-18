@@ -13,6 +13,8 @@ namespace Press.Extensions {
         public static void AddBlog(this IServiceCollection services) {
             if (services == null) throw new ArgumentNullException(nameof(services));
             services.AddEmbededViews();
+
+            services.AddSingleton<Services.IBlogRepository, Services.FileBlogRepository>();
         }
 
         private static void AddEmbededViews(this IServiceCollection services) {

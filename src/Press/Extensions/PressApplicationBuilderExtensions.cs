@@ -21,7 +21,7 @@ namespace Press.Extensions {
                 template: "post/{*slug}",
                 defaults: new {
                     controller = "Blog",
-                    action = "Article"
+                    action = "ViewPost"
                 })
             .MapRoute(
                 name: "blogCategory",

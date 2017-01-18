@@ -1,35 +1,17 @@
-﻿@{
+﻿@model IEnumerable<Press.Services.IPost>
+@{
     ViewData["Title"] = "Home Page";
     ViewData["page-class"] = "home";
 }
 
 <ol class="posts">
-    <li>
-        <article>
-            <h1><a href="~/post/article">Press 2017 - Build Tour São Paulo</a></h1>
-            <time>10 Abril 2015</time> em <a href="#">Eventos</a>, <a href="#">Build</a>, <a href="#">Build Tour</a>
-            <p>Est clita elitr lorem mazim ut esse nulla sit eirmod tempor aliquam nonummy dolores justo liber et aliquyam accumsan dolor no est duo sanctus sadipscing ut nulla nibh vero sit invidunt invidunt clita elitr eos takimata nam quod vel rebum lorem justo ipsum gubergren eros diam vero autem clita at</p>
-        </article>
-    </li>
-    <li>
-        <article>
-            <h1><a href="~/post/article">Press 2017 - Build Tour São Paulo</a></h1>
-            <time>10 Abril 2015</time> em <a href="#">Eventos</a>, <a href="#">Build</a>, <a href="#">Build Tour</a>
-            <p>Est clita elitr lorem mazim ut esse nulla sit eirmod tempor aliquam nonummy dolores justo liber et aliquyam accumsan dolor no est duo sanctus sadipscing ut nulla nibh vero sit invidunt invidunt clita elitr eos takimata nam quod vel rebum lorem justo ipsum gubergren eros diam vero autem clita at</p>
-        </article>
-    </li>
-    <li>
-        <article>
-            <h1><a href="~/post/article">Press 2017 - Build Tour São Paulo</a></h1>
-            <time>10 Abril 2015</time> em <a href="#">Eventos</a>, <a href="#">Build</a>, <a href="#">Build Tour</a>
-            <p>Est clita elitr lorem mazim ut esse nulla sit eirmod tempor aliquam nonummy dolores justo liber et aliquyam accumsan dolor no est duo sanctus sadipscing ut nulla nibh vero sit invidunt invidunt clita elitr eos takimata nam quod vel rebum lorem justo ipsum gubergren eros diam vero autem clita at</p>
-        </article>
-    </li>
-    <li>
-        <article>
-            <h1><a href="~/post/article">Press 2017 - Build Tour São Paulo</a></h1>
-            <time>10 Abril 2015</time> em <a href="#">Eventos</a>, <a href="#">Build</a>, <a href="#">Build Tour</a>
-            <p>Est clita elitr lorem mazim ut esse nulla sit eirmod tempor aliquam nonummy dolores justo liber et aliquyam accumsan dolor no est duo sanctus sadipscing ut nulla nibh vero sit invidunt invidunt clita elitr eos takimata nam quod vel rebum lorem justo ipsum gubergren eros diam vero autem clita at</p>
-        </article>
-    </li>
+    @foreach (var item in Model) {
+        <li>
+            <article>
+                <h1><a href="~/post/slug">@item.Title</a></h1>
+                <time datetime="@item.PublishDate.ToString("o")">@item.PublishDate.ToLocalTime().ToString("dd MMM yyyy")</time> em <a href="#">Eventos</a>, <a href="#">Build</a>, <a href="#">Build Tour</a>
+                <p>Est clita elitr lorem mazim ut esse nulla sit eirmod tempor aliquam nonummy dolores justo liber et aliquyam accumsan dolor no est duo sanctus sadipscing ut nulla nibh vero sit invidunt invidunt clita elitr eos takimata nam quod vel rebum lorem justo ipsum gubergren eros diam vero autem clita at</p>
+            </article>
+        </li>
+    }
 </ol>

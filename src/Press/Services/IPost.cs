@@ -14,8 +14,8 @@ namespace Press.Services
         string Excerpt { get; set;}
         string Content { get; set; }
         bool IsPublished { get; set; }
-        DateTime PublishDate { get; set; }
-        DateTime LastModified { get; set; }
+        DateTimeOffset PublishDate { get; set; }
+        DateTimeOffset LastModified { get; set; }
         IEnumerable<string> Categories { get; set; }
         IEnumerable<string> Tags { get; set; }
     }
