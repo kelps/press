@@ -1,3 +1,5 @@
+![Build status](https://hangar42.visualstudio.com/_apis/public/build/definitions/73fe4e85-adaa-4e0e-8702-90b57f4ce840/3/badge)
+
 # Press
 ***Press*** will be a simple blog engine created as an ASP.NET Core middleware
 
