@@ -28,6 +28,11 @@
 
         a {
             color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -69,6 +74,11 @@
 
         img {
             max-width: 100%;
+        }
+
+        a.tag + a.tag:before {
+            content: ", ";
+            text-decoration: none;
         }
     </style>
 </head>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Press.Services {
-    public class FileBlogRepository : IBlogRepository {
+    public abstract class FileBlogRepository : IBlogRepository {
         IFileProvider fileProvider;
 
         public FileBlogRepository(IFileProvider fileProvider) {
@@ -14,16 +14,20 @@ namespace Press.Services {
 
         public IEnumerable<IPost> List() {
             var files = fileProvider.GetDirectoryContents("posts").Where(f => !f.IsDirectory);
-            var result = new List<Post>();
-            result.AddRange(
-                files
-                    .Select(f => new Post() { Title = f.Name, LastModified = f.LastModified, PublishDate = f.LastModified })
-                    .OrderByDescending(p => p.PublishDate)
-            );
-            return result;
+            var result = new List<IPost>();
+
+            foreach (var file in files) {
+                if (TryParsePost(file, out IPost p)) {
+                    result.Add(p);
+                }
+            }
+
+            return result.OrderByDescending(p => p.PublishDate);
         }
 
-        class Post : IPost {
+        protected abstract bool TryParsePost(IFileInfo file, out IPost post);
+
+        protected class Post : IPost {
             public string Author { get; set; }
 
             public IEnumerable<string> Categories { get; set; }

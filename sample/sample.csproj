@@ -79,6 +79,11 @@
     <None Include="Views\Blog\Post.cshtml" />
     <None Include="Views\Blog\_Layout.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Update="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
   </PropertyGroup>

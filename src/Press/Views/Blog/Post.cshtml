@@ -1,19 +1,20 @@
-﻿@{
+﻿@model Press.Services.IPost
+@{
     ViewData["Title"] = "Post";
     ViewData["page-class"] = "post";
 }
 
 <article class="post">
-    <h1><a href="~/post/article">Press 2017 - Build Tour São Paulo</a></h1>
-    <time>10 Abril 2015</time> em <a href="#">Eventos</a>, <a href="#">Build</a>, <a href="#">Build Tour</a>
-    <p>Est clita elitr lorem mazim ut esse nulla sit eirmod tempor aliquam nonummy dolores justo liber et aliquyam accumsan dolor no est duo sanctus sadipscing ut nulla nibh vero sit invidunt invidunt clita elitr eos takimata nam quod vel rebum lorem justo ipsum gubergren eros diam vero autem clita at</p>
-    <p>Est clita elitr lorem mazim ut esse nulla sit eirmod tempor aliquam nonummy dolores justo liber et aliquyam accumsan dolor no est duo sanctus sadipscing ut nulla nibh vero sit invidunt invidunt clita elitr eos takimata nam quod vel rebum lorem justo ipsum gubergren eros diam vero autem clita at</p>
-    <p>Est clita elitr lorem mazim ut esse nulla sit eirmod tempor aliquam nonummy dolores justo liber et aliquyam accumsan dolor no est duo sanctus sadipscing ut nulla nibh vero sit invidunt invidunt clita elitr eos takimata nam quod vel rebum lorem justo ipsum gubergren eros diam vero autem clita at</p>
-    <p>Est clita elitr lorem mazim ut esse nulla sit eirmod tempor aliquam nonummy dolores justo liber et aliquyam accumsan dolor no est duo sanctus sadipscing ut nulla nibh vero sit invidunt invidunt clita elitr eos takimata nam quod vel rebum lorem justo ipsum gubergren eros diam vero autem clita at</p>
-    <p>Est clita elitr lorem mazim ut esse nulla sit eirmod tempor aliquam nonummy dolores justo liber et aliquyam accumsan dolor no est duo sanctus sadipscing ut nulla nibh vero sit invidunt invidunt clita elitr eos takimata nam quod vel rebum lorem justo ipsum gubergren eros diam vero autem clita at</p>
+    <h1><a href="~/post/@Model.Slug">aaa @Model.Title</a></h1>
+    <time datetime="@Model.PublishDate.ToString("o")">@Model.PublishDate.ToLocalTime().ToString("dd MMM yyyy")</time>
+    @if (Model.Tags?.Any() == true) {
+        @:em
+                    foreach (var tag in Model.Tags) {<a class="tag" href="#@tag">@tag</a>}
+    }
+    @Html.Raw(Model.Content)
 
     <footer>
-        <a href="https://linkedin.com/in/kelps" target="_blank" rel="author">Kelps Leite de Sousa</a>
+        <a href="https://linkedin.com/in/kelps" target="_blank" rel="author">@Model.Author</a>
         <aside class="share">
             <h3>compartilhe</h3>
             <ul>

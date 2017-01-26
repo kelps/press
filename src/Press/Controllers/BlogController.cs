@@ -16,7 +16,7 @@ namespace Press.Controllers {
         }
 
         public IActionResult ViewPost(string slug) {
-            return View("Post");
+            return View("Post", blog.List().First());
         }
     }
 }

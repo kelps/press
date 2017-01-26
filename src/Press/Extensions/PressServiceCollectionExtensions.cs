@@ -14,7 +14,7 @@ namespace Press.Extensions {
             if (services == null) throw new ArgumentNullException(nameof(services));
             services.AddEmbededViews();
 
-            services.AddSingleton<Services.IBlogRepository, Services.FileBlogRepository>();
+            services.AddSingleton<Services.IBlogRepository, Services.XmlBlogRepository>();
         }
 
         private static void AddEmbededViews(this IServiceCollection services) {
