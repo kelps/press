@@ -10,8 +10,7 @@ using Microsoft.Extensions.Options;
 //look at RazorViewEngineOptionsSetup
 //services.TryAddEnumerable(ServiceDescriptor.Transient<IConfigureOptions<RazorViewEngineOptions>, RazorViewEngineOptionsSetup>());
 //http://asp.net-hacker.rocks/2016/02/17/dependency-injection-in-aspnetcore.html
-namespace Press.Configuration
-{
+namespace Press.Configuration {
     public class PressConfigurationSource : FileConfigurationSource {
         public override IConfigurationProvider Build(IConfigurationBuilder builder) {
             FileProvider = FileProvider ?? builder.GetFileProvider();
