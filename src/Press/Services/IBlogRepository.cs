@@ -5,17 +5,16 @@ using System.Threading.Tasks;
 
 namespace Press.Services {
     public interface IBlogRepository {
+        /// <summary>
+        /// Lists all posts in the repository.
+        /// </summary>
         IEnumerable<IPost> List();
 
+        /// <summary>
+        /// Creates (instantiates) the appropriate <see cref="IPost"/> object for the current <see cref="IBlogRepository"/> implementation.
+        /// </summary>
+        IPost Create();
 
-        //void Save(IPost post);
-        //void Delete(IPost post);
-
-        //void Delete(Post post);
-        //IEnumerable<Post> GetAll(string blogId);
-        //Dictionary<string, int> GetCategories(string blogId);
-        //Dictionary<string, int> GetTags(string blogId);
-        //void Save(Post post);
         //string SaveMedia(string blogid, MediaObject media);
     }
 }

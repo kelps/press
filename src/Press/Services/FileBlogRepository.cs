@@ -12,6 +12,8 @@ namespace Press.Services {
             this.fileProvider = fileProvider;
         }
 
+        public abstract IPost Create();
+
         public IEnumerable<IPost> List() {
             var files = fileProvider.GetDirectoryContents("posts").Where(f => !f.IsDirectory);
             var result = new List<IPost>();
@@ -27,7 +29,12 @@ namespace Press.Services {
 
         protected abstract bool TryParsePost(IFileInfo file, out IPost post);
 
-        protected class Post : IPost {
+        protected internal class Post : IPost {
+            private FileBlogRepository repository;
+            public Post(FileBlogRepository repository) {
+                this.repository = repository;
+            }
+
             public string Author { get; set; }
 
             public IEnumerable<string> Categories { get; set; }
@@ -49,6 +56,14 @@ namespace Press.Services {
             public IEnumerable<string> Tags { get; set; }
 
             public string Title { get; set; }
+
+            public bool Delete() {
+                return true;
+            }
+
+            public bool Save() {
+                return true;
+            }
         }
     }
 }
