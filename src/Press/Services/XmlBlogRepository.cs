@@ -8,10 +8,6 @@ namespace Press.Services {
 
         public XmlBlogRepository(IFileProvider fileProvider) : base(fileProvider) { }
 
-        public override IPost Create() {
-            return new Post(this);
-        }
-
         protected override bool TryParsePost(IFileInfo file, out IPost post) {
             post = new Post(this) {
                 Author="Kelps Leite de Sousa",

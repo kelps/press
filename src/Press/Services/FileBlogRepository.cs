@@ -12,7 +12,9 @@ namespace Press.Services {
             this.fileProvider = fileProvider;
         }
 
-        public abstract IPost Create();
+        public virtual IPost Create() {
+            return new Post(this);
+        }
 
         public IEnumerable<IPost> List() {
             var files = fileProvider.GetDirectoryContents("posts").Where(f => !f.IsDirectory);
